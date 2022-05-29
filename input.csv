@@ -1,0 +1,3 @@
+#single-cell_id,single-cell_bam,bulk_bam,bulk_vcf
+P6-SC37,/Genomics-Core/20201102data_analysis/P6/P6_SC37/P6_SC37.recal.bam,/Genomics-Core/20201102data_analysis/P6/P6_B/P6_SCB.recal.bam,/Genomics-Core/20201102data_analysis/P6/P6_B/HaplotypeCaller_P6_SCB.vcf
+P6-SC29,/Genomics-Core/20201102data_analysis/P6/P6_SC29/P6_SC29.recal.bam,/Genomics-Core/20201102data_analysis/P6/P6_B/P6_SCB.recal.bam,/Genomics-Core/20201102data_analysis/P6/P6_B/HaplotypeCaller_P6_SCB.vcf
