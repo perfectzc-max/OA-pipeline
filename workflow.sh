@@ -26,3 +26,6 @@ run_sccaller.sh GRCh37 input.csv /Jan-Lab/zhengchen/sccaller
 ls /Jan-Lab/zhengchen/sccaller/P*/*B.vcf >vcf.txt
 #indel and snv
 sed -e s/"\/P"/:P/g vcf.txt | awk -F "[:.]" '{print "sh code.sh "  $1"/"$2 " "$3}' |head -1 |bash
+
+#filter dbsnp
+
