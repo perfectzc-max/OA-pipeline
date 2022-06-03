@@ -18,4 +18,11 @@ ls /Jan-Lab/zhengchen/nfscore/P*/results/Preprocessing/*/Recalibrated/P7*L*bam >
 #run sccaller
 run_sccaller.sh GRCh37 input.csv /Jan-Lab/zhengchen/sccaller
 
-#
+#filter
+#grep '0/1' cell.vcf | grep 'True' | awk '$7=="." && length($5)==1' | awk -F "[:,]" '$8+$9>=20' > cell.somatic.snv.vcf
+#grep '0/1' cell.vcf | grep 'True' | awk '$7=="." && length($5)>1' | awk -F "[:,]" '$8+$9>=30' > cell.somatic.indel.vcf
+
+#vcf list 
+ls /Jan-Lab/zhengchen/sccaller/P*/*B.vcf >vcf.txt
+#indel and snv
+sed -e s/"\/P"/:P/g vcf.txt | awk -F "[:.]" '{print "sh code.sh "  $1"/"$2 " "$3}' |head -1 |bash
