@@ -30,3 +30,7 @@ sh 3_cal_cov.sh ${P} ${cell}
 #caculate sensitivity
 #observed hsnp, missing hsnp: SNV 1-22, SNV X, INDEL 1-22, INDEL X
 sh 4_sen_q25.sh ${P} ${cell}
+
+#check result
+cat  /Jan-Lab/zhengchen/correct_cov/cov_sen/P*/*.sen>sen.txt
+cat  /Jan-Lab/zhengchen/correct_cov/cov_sen/P*/*.cov >cov.txt
