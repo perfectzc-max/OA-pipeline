@@ -11,12 +11,8 @@ ls /Jan-Lab/zhengchen/nfscore/P*/results/VariantCalling/*/HaplotypeCaller/Haplot
 #filter out depth < 20x
 for i in $(cat bulk.txt);do echo "nohup sh 1_vcf_collect.sh $i &" ;done |bash
 
-
-
-
 #step2 3 parameter
-#
-
+#Calculate the overlap area of bulk and cell
 for i in $(seq 1 23)  ; do echo "\
 nohup sh 2_cov_sen.v2.hg19.sh \
 $i \
@@ -30,6 +26,3 @@ sh 3_cal_cov.sh ${P} ${cell}
 
 #step 4 two parameter
 sh 4_sen_q25.sh ${P} ${cell}
-
-#step 5 two parameter
-sh 5_snp.sh ${P} ${cell}
