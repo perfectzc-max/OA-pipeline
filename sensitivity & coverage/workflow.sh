@@ -22,7 +22,11 @@ ${P} \
 " ;done | bash
 
 #step3 two parameter
+#caculate coverage
+#SNV 1-22, SNV X, INDEL 1-22, INDEL X
 sh 3_cal_cov.sh ${P} ${cell}
 
 #step 4 two parameter
+#caculate sensitivity
+#observed hsnp, missing hsnp: SNV 1-22, SNV X, INDEL 1-22, INDEL X
 sh 4_sen_q25.sh ${P} ${cell}
