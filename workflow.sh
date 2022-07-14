@@ -15,6 +15,7 @@ ls /Jan-Lab/zhengchen/nfscore/P*/results/VariantCalling/P*/HaplotypeCaller/Haplo
 ls /Jan-Lab/zhengchen/nfscore/P*/results/Preprocessing/*/Recalibrated/P7*L*bam > samplelist_p7L.txt
 
 #creat a input file like input.csv
+gencsv.sh samplelist_p7L.txt vcf_p7L.txt >input.csv
 #run sccaller
 run_sccaller.sh GRCh37 input.csv /Jan-Lab/zhengchen/sccaller
 
