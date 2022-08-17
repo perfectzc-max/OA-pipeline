@@ -10,12 +10,15 @@ run_nfcore_haplotypecaller_vep.sh GRCh37 /Jan-Lab/zhengchen/nfscore/P13N/samples
 #unzip vcf file
 gunzip /Jan-Lab/zhengchen/nfscore/P13N/results/VariantCalling/P*/HaplotypeCaller/*.gz
 
+#filter haplotype caller results
+sh hap_filter.sh P1 P1-B
+
 #list bam and vcf file
-ls /Jan-Lab/zhengchen/nfscore/P*/results/VariantCalling/P*/HaplotypeCaller/HaplotypeCaller_P7*L*B.vcf > vcf_p7L.txt
-ls /Jan-Lab/zhengchen/nfscore/P*/results/Preprocessing/*/Recalibrated/P7*L*bam > samplelist_p7L.txt
+#ls /Jan-Lab/zhengchen/nfscore/P*/results/VariantCalling/P*/HaplotypeCaller/HaplotypeCaller_P7*L*B.vcf > vcf_p7L.txt
+#ls /Jan-Lab/zhengchen/nfscore/P*/results/Preprocessing/*/Recalibrated/P7*L*bam > samplelist_p7L.txt
 
 #creat a input file like input.csv
-gencsv.sh samplelist_p7L.txt vcf_p7L.txt >input.csv
+gencsv.sh P7L
 #run sccaller
 run_sccaller.sh GRCh37 input.csv /Jan-Lab/zhengchen/sccaller
 
